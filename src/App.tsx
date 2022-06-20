@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import CarEdit from "./components/carManagement/CarEdit";
+import CarManagement from "./components/carManagement/CarManagement";
+import CarRent from "./components/carRent/CarRent";
+import Customer from "./components/customer/Customer";
+import CustomerManagement from "./components/customerManagement/CustomerManagement";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<CarRent />} />
+      <Route path="/carManagement" element={<CarManagement />} />
+      <Route path="/carManagement/:id" element={<CarEdit />} />
+      <Route path="/customer" element={<Customer />} />
+      <Route path="/customerManagement" element={<CustomerManagement />} />
+    </Routes>
   );
 }
 
